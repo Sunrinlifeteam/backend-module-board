@@ -25,6 +25,14 @@ export class NoticeService {
     return this.noticeRepository.findOneBy({ id });
   }
 
+  async getCount(options: GetNoticeListRequest): Promise<number> {
+    return this.noticeRepository.count({
+      where: {
+        title: options.search && Like(`%${options.search}%`),
+      },
+    });
+  }
+
   async createNotice(content: Partial<NoticeEntity>): Promise<NoticeEntity> {
     const notice = this.noticeRepository.create(content);
     return this.noticeRepository.save(notice);

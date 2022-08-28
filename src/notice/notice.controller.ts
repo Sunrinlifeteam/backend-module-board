@@ -39,8 +39,9 @@ export class NoticeController {
     payload: GetNoticeListRequest,
   ): Promise<GetNoticeListResponse> {
     const noticeList = await this.noticeService.getNoticeList(payload);
+    const totalCount = await this.noticeService.getCount(payload);
     return {
-      totalCount: noticeList.length,
+      totalCount: totalCount,
       notice: noticeList.map(this.noticeEntityToNotice),
     };
   }
