@@ -1,6 +1,6 @@
 import { Controller } from '@nestjs/common';
 import { GrpcMethod } from '@nestjs/microservices';
-import { NoticeEntity } from 'src/shared/access/notice.dao';
+import { NoticeEntity } from 'shared/lib/access/notice.dao';
 import {
   DeleteNoticeRequest,
   GetNoticeListRequest,
@@ -9,7 +9,7 @@ import {
   Notice,
   PartialNotice,
   UpdateNoticeRequest,
-} from 'src/shared/transfer/board.dto';
+} from 'shared/lib/transfer/board.dto';
 import { NoticeService } from './notice.service';
 
 @Controller()

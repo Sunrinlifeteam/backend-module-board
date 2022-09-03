@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { NoticeEntity } from 'src/shared/access/notice.dao';
-import { GetNoticeListRequest } from 'src/shared/transfer/board.dto';
+import { NoticeEntity } from 'shared/lib/access/notice.dao';
+import { GetNoticeListRequest } from 'shared/lib/transfer/board.dto';
 import { DeleteResult, Like, Repository, UpdateResult } from 'typeorm';
 
 @Injectable()

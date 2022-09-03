@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigService } from '@nestjs/config';
-import { NoticeEntity } from './shared/access/notice.dao';
+import { NoticeEntity } from 'shared/lib/access/notice.dao';
 
 @Module({
   imports: [
